@@ -1,7 +1,4 @@
-Awesome — here’s a **clean, professional, GitHub-ready `README.md`** tailored exactly to your **MLOPS Hotel Reservation project** and your current pipeline structure.
-You can copy-paste this directly into `README.md`.
 
----
 
 # MLOps Hotel Reservation Prediction
 
@@ -218,4 +215,3 @@ The following are excluded via `.gitignore`:
 **Jerome Philip John**
 B.Tech Computer Science | ML & MLOps Enthusiast
 
--
