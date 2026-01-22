@@ -1,0 +1,10 @@
+pandas
+numpy
+scikit-learn
+boto3
+pyyaml
+seaborn
+matplotlib
+imbalanced-learn
+lightgbm
+mlflow

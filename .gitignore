@@ -1,0 +1,6 @@
+venv/
+mlruns/
+logs/
+hotel_reservation_mlops.egg-info/
+__pycache__/
+*.pyc
