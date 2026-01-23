@@ -6,8 +6,9 @@ from config.paths_config import (
     CONFIG_PATH,
     PROCESSED_TRAIN_DATA_PATH,
     PROCESSED_TEST_DATA_PATH,
-    MODEL_OUTPUT_PATH
+    MODEL_OUTPUT_PATH,
 )
+
 
 
 if __name__=="__main__":

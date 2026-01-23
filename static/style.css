@@ -1,0 +1,235 @@
+/* ================================
+   Base + Theme
+================================= */
+* { box-sizing: border-box; }
+
+:root{
+  --bg-a: #0b1224;
+  --bg-b: #0f172a;
+
+  --surface: rgba(255,255,255,0.08);
+  --surface-2: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.14);
+
+  --text: #e5e7eb;
+  --muted: rgba(229,231,235,0.72);
+
+  --primary: #6366f1;
+  --primary-2: #8b5cf6;
+
+  --ring: rgba(99,102,241,0.55);
+
+  --danger: #ef4444;
+  --success: #22c55e;
+  --info: #38bdf8;
+
+  /* Dropdown panel colors (native) */
+  --dropdown-bg: #0b1020;
+  --dropdown-text: #e5e7eb;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,0.35), transparent 50%),
+    radial-gradient(900px 500px at 90% 20%, rgba(139,92,246,0.28), transparent 55%),
+    linear-gradient(180deg, var(--bg-a), var(--bg-b));
+  color-scheme: dark; /* IMPORTANT: better native dropdown rendering */
+}
+
+/* ================================
+   Layout
+================================= */
+.app{
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 16px;
+}
+
+.panel{
+  width: min(980px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+
+.panel__header{
+  padding: 22px 22px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.panel__title{
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.panel__subtitle{
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.panel__footer{
+  padding: 14px 22px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+.panel__footnote{
+  color: rgba(229,231,235,0.55);
+}
+
+/* ================================
+   Form
+================================= */
+.form{
+  padding: 18px 22px 22px;
+}
+
+.form__grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 720px){
+  .form__grid{ grid-template-columns: 1fr; }
+}
+
+.control__label{
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.control__input,
+.control__select{
+  width: 100%;
+  height: 44px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(15,23,42,0.55);
+  color: var(--text);
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.control__input::placeholder{
+  color: rgba(229,231,235,0.45);
+}
+
+.control__input:focus,
+.control__select:focus{
+  border-color: rgba(99,102,241,0.75);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+/* Better keyboard-only focus */
+.control__input:focus-visible,
+.control__select:focus-visible{
+  border-color: rgba(99,102,241,0.85);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+/* ================================
+   Dropdown visibility improvements
+   (works in many browsers; native UI still varies)
+================================= */
+.control__select{
+  appearance: auto;
+}
+
+/* Options panel styling (improves readability in many browsers) */
+.control__select option{
+  background: var(--dropdown-bg);
+  color: var(--dropdown-text);
+}
+
+/* Some browsers support styling of optgroup */
+.control__select optgroup{
+  background: var(--dropdown-bg);
+  color: var(--dropdown-text);
+}
+
+/* ================================
+   Actions
+================================= */
+.form__actions{
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.btn{
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.btn--primary{
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  color: #fff;
+}
+
+.btn--secondary{
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn:active{
+  transform: translateY(0px);
+  filter: brightness(0.98);
+}
+
+/* ================================
+   Result / Alerts
+================================= */
+.result{
+  padding: 0 22px 22px;
+}
+
+.alert{
+  border-radius: 14px;
+  padding: 14px 14px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(0,0,0,0.20);
+}
+
+.alert__title{
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.alert__text{
+  margin: 0;
+  color: rgba(229,231,235,0.82);
+}
+
+.alert--danger{ border-color: rgba(239,68,68,0.55); }
+.alert--success{ border-color: rgba(34,197,94,0.55); }
+.alert--info{ border-color: rgba(56,189,248,0.55); }
