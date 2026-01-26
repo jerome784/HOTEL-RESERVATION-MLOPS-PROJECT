@@ -1,0 +1,12 @@
+{
+  "AWSEBDockerrunVersion": 1,
+  "Image": {
+    "Name": "784167813131.dkr.ecr.us-east-1.amazonaws.com/hotel-reservation-mlops:latest",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "5000"
+    }
+  ]
+}
